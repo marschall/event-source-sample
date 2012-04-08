@@ -8,4 +8,4 @@ Tomcat
 ------
 To make the example work on Tomcat you need Tomcat 7 and have a NIO connector.
 
-  <Connector protocol="org.apache.coyote.http11.Http11NioProtocol" />
+    <Connector protocol="org.apache.coyote.http11.Http11NioProtocol" />
