@@ -6,7 +6,7 @@
 
 	<servlet>
 		<servlet-name>eventServlet</servlet-name>
-		<servlet-class>name.pmm.event.SampleServlet</servlet-class>
+		<servlet-class>com.github.marschall.SampleServlet</servlet-class>
 		<async-supported>true</async-supported>
 	</servlet>
 

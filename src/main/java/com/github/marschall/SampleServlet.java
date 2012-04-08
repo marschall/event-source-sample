@@ -1,4 +1,4 @@
-package name.pmm.event;
+package com.github.marschall;
 
 import java.io.IOException;
 import java.util.Locale;
