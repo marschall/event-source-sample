@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>EventSource Demo</title>
+	<meta charset="UTF-8">
+	<title>EventSource Demo</title>
 </head>
 <body>
 	<h1>Server Time</h1>
@@ -12,7 +12,7 @@
 	(function() {
 		var source = new EventSource('events'); // servlet from web.xml
 		source.onmessage = function (event) {
-			var element = document.getElementById("server-time");
+			var element = document.getElementById('server-time');
 			element.innerHTML = event.data;
 		};
 	})();

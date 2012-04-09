@@ -54,16 +54,16 @@ public class SampleServlet extends EventSourceServlet
         @Override
         public void run()
         {
-            String data = String.format(Locale.US, "%tT", System.currentTimeMillis());
+            String serverTime = String.format(Locale.US, "%tT", System.currentTimeMillis());
             for (Emitter emitter : emitters)
             {
                 try
                 {
-                    emitter.data(data);
+                    emitter.data(serverTime);
                 }
                 catch (IOException e)
                 {
-                    LOG.log(Level.SEVERE, "could not sent update to client", e);
+                    LOG.log(Level.SEVERE, "could not send update to client", e);
                 }
             }
             
