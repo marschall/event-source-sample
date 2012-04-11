@@ -16,6 +16,10 @@ Check out the [the HTTP Connector reference](http://tomcat.apache.org/tomcat-7.0
 
 You will get [chunking](http://tomcat.10.n6.nabble.com/How-to-disable-chunked-encoding-for-the-Http11NioProtocol-connector-td2038448.html) but it works anyways.
 
+Resin
+-----
+Does chunking but works out of the box.
+
 GlassFish/Grizzly
 -----------------
 Doesn't work, see [GRIZZLY-1252](http://java.net/jira/browse/GRIZZLY-1252)
