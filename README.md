@@ -14,3 +14,9 @@ To make the example work on Tomcat you need Tomcat 7 and have a NIO connector.
 
 Check out the [the HTTP Connector reference](http://tomcat.apache.org/tomcat-7.0-doc/config/http.html) for more information.
 
+You will get [chunking](http://tomcat.10.n6.nabble.com/How-to-disable-chunked-encoding-for-the-Http11NioProtocol-connector-td2038448.html) but it works anyways.
+
+GlassFish/Grizzly
+-----------------
+Doesn't work, see [GRIZZLY-1252](http://java.net/jira/browse/GRIZZLY-1252)
+
