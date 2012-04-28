@@ -7,12 +7,23 @@
 <body>
 	<h1>Server Time</h1>
 	<time id="server-time">00:00:00</time>
+	<br /> <small>(updates all 5 seconds)</small>
 
+	<h1>Counter</h1>
+	<div id="count">0</div>
+	<br /> <small>(updates all 5 seconds)</small>
+	
 	<script type="text/javascript">
 	(function() {
-		var source = new EventSource('events'); // servlet from web.xml
-		source.onmessage = function (event) {
+		var timeSource = new EventSource('events/time'); // servlet from web.xml
+		timeSource.onmessage = function (event) {
 			var element = document.getElementById('server-time');
+			element.innerHTML = event.data;
+		};
+		
+		var countSource = new EventSource('events/counter'); // servlet from web.xml
+		countSource.onmessage = function (event) {
+			var element = document.getElementById('count');
 			element.innerHTML = event.data;
 		};
 	})();

@@ -17,12 +17,13 @@ import org.eclipse.jetty.servlets.EventSource;
 import org.eclipse.jetty.servlets.EventSource.Emitter;
 import org.eclipse.jetty.servlets.EventSourceServlet;
 
-public class SampleServlet extends EventSourceServlet
+public class ServerTimeServlet extends EventSourceServlet
 {
+    
+    private static final Logger LOG = Logger.getLogger("event-source-sample");
     
     private final Set<Emitter> emitters = new CopyOnWriteArraySet<>();
     
-    private static final Logger LOG = Logger.getLogger("event-source-sample");
     
     private volatile ScheduledExecutorService executor;
     
@@ -31,7 +32,7 @@ public class SampleServlet extends EventSourceServlet
     {
         super.init();
         this.executor = Executors.newSingleThreadScheduledExecutor();
-        this.executor.scheduleAtFixedRate(new UpdateSender(), 10, 10, TimeUnit.SECONDS);
+        this.executor.scheduleAtFixedRate(new UpdateSender(), 0, 5, TimeUnit.SECONDS);
     }
     
     @Override
@@ -81,6 +82,12 @@ public class SampleServlet extends EventSourceServlet
             this.emitter = emitter;
             emitters.add(emitter);
             
+        }
+        
+        @Override
+        public void onResume(Emitter emitter, String lastEventId) throws IOException
+        {
+            onOpen(emitter);
         }
 
         @Override

@@ -5,14 +5,25 @@
       metadata-complete="true">
 
 	<servlet>
-		<servlet-name>eventServlet</servlet-name>
-		<servlet-class>com.github.marschall.SampleServlet</servlet-class>
+		<servlet-name>serverTime</servlet-name>
+		<servlet-class>com.github.marschall.ServerTimeServlet</servlet-class>
+		<async-supported>true</async-supported>
+	</servlet>
+
+	<servlet>
+		<servlet-name>counter</servlet-name>
+		<servlet-class>com.github.marschall.CounterServlet</servlet-class>
 		<async-supported>true</async-supported>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>eventServlet</servlet-name>
-		<url-pattern>/events/*</url-pattern>
+		<servlet-name>serverTime</servlet-name>
+		<url-pattern>/events/time/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>counter</servlet-name>
+		<url-pattern>/events/counter/*</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
