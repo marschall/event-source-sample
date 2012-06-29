@@ -14,7 +14,7 @@ To make the example work on Tomcat you need Tomcat 7 and have a NIO connector.
 
 Check out the [the HTTP Connector reference](http://tomcat.apache.org/tomcat-7.0-doc/config/http.html) for more information.
 
-You will get [chunking](http://tomcat.10.n6.nabble.com/How-to-disable-chunked-encoding-for-the-Http11NioProtocol-connector-td2038448.html) but it works anyways.
+It's recommended that you use Tomcat 7.0.28 or newer otherwise you'll get chunking.
 
 Resin
 -----
